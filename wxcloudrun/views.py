@@ -6,6 +6,7 @@ from django.shortcuts import render
 from wxcloudrun.models import Counters
 
 
+
 logger = logging.getLogger('log')
 
 

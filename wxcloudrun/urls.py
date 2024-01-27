@@ -17,10 +17,14 @@ Including another URLconf
 from wxcloudrun import views
 from django.conf.urls import url
 
+from django.urls import path
+from werobot.contrib.django import make_view
+from .robot import myrobot
+
 urlpatterns = (
     # 计数器接口
     url(r'^^api/count(/)?$', views.counter),
-
-    # 获取主页
-    url(r'(/)?$', views.index),
+    
+    path("", make_view(myrobot)),
 )
+
