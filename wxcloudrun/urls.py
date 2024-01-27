@@ -25,6 +25,6 @@ urlpatterns = (
     # 计数器接口
     url(r'^^api/count(/)?$', views.counter),
     
-    path("", make_view(myrobot)),
+    path(r'^robot(/)', make_view(myrobot)),
 )
 
