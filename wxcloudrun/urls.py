@@ -18,7 +18,6 @@ from wxcloudrun import views
 from django.conf.urls import url
 
 from django.urls import path
-from werobot.contrib.django import make_view
 
 urlpatterns = (
     # 计数器接口
