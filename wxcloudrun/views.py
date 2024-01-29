@@ -31,7 +31,7 @@ def reply(request : HttpRequest, _):
         return JsonResponse({
                 "ToUserName": request["FromUserName"],
                 "FromUserName": request["ToUserName"],
-                "CreateTime":  request["CreatTime"], 
+                "CreateTime":  request["CreateTime"], 
                 "MsgType": "text", 
                 "Content": openid
         })
