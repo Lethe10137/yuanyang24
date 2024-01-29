@@ -10,6 +10,13 @@ from wxcloudrun.models import Counters
 logger = logging.getLogger('log')
 
 
+def reply(request, _):
+    return JsonResponse({
+        'code' : 0,
+        'msg' : 'ok'
+    })
+
+
 def index(request, _):
     """
     获取主页

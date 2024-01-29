@@ -24,7 +24,7 @@ from .robot import myrobot
 urlpatterns = (
     # 计数器接口
     url(r'^^api/count(/)?$', views.counter),
-    
-    path(r'^robot(/)', make_view(myrobot)),
+    url(r'^robot(/)', make_view(myrobot)),
+    url(r'^reply(/)', views.reply),
 )
 
