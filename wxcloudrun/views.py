@@ -24,7 +24,7 @@ def reply(request : HttpRequest, _):
 
     try:
         
-        request = json.load(request.body)
+        request = json.loads(request.body.decode())
         print(request)
         openid = request["FromUserName"]
         
