@@ -6,9 +6,15 @@ from django.shortcuts import render
 from wxcloudrun.models import Counters
 from django.http import HttpRequest
 
+import base64
+import binascii
 
+from .utils import trunc_open_id
 
 logger = logging.getLogger('log')
+
+
+
 
 
 def reply(request : HttpRequest, _):
@@ -25,15 +31,19 @@ def reply(request : HttpRequest, _):
     try:
         
         request = json.loads(request.body.decode())
-        print(request)
+        # print(request)
         openid = request["FromUserName"]
+        openid = trunc_open_id(openid) # 保证长度是28字符， 即168位
+        
+        byte_id = base64.urlsafe_b64decode(openid)
+        openid = binascii.hexlify(byte_id).decode('utf-8')
         
         return JsonResponse({
                 "ToUserName": request["FromUserName"],
                 "FromUserName": request["ToUserName"],
                 "CreateTime":  request["CreateTime"], 
                 "MsgType": "text", 
-                "Content": openid
+                "Content": openid + " " + len(openid)
         })
     except Exception as e:
         return JsonResponse({
