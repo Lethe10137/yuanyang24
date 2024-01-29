@@ -9,11 +9,9 @@ from django.http import HttpRequest
 import base64
 import binascii
 
-from .utils import trunc_open_id
+from .utils import trunc_open_id, decode_token
 
 logger = logging.getLogger('log')
-
-
 
 
 
@@ -37,12 +35,35 @@ def reply(request : HttpRequest, _):
         byte_id = base64.urlsafe_b64decode(openid)
         openid = binascii.hexlify(byte_id).decode('utf-8')
         
+        
+        KEY_PHASE  = b"oikjhfe3ewdsxcvjp8765r4edf"
+        SALT_PHASE = b"234578okhfdwe57iknbvcde5678"
+        
+        content = request["Content"]
+        
+        
+        if(content == "商务合作"):  
+            result = "商务合作信息"
+        if(content == "id"):
+            result = "查询id" + openid
+        elif len(content) == 128:
+            try:
+                id, time, question = decode_token(request["FromUserName"])
+                if(id == openid):
+                    result = "{} {} {}".format(id, time, question)
+                else:
+                    result = "获取这个token时的身份信息和当前微信账号不符" + "{} {} {}".format(id, time, question)
+            except Exception as e:
+                result = "不合法的token {}".format(e)
+        else:
+            result = "默认回复"
+        
         return JsonResponse({
                 "ToUserName": request["FromUserName"],
                 "FromUserName": request["ToUserName"],
                 "CreateTime":  request["CreateTime"], 
                 "MsgType": "text", 
-                "Content": openid + " " + len(openid)
+                "Content": result
         })
     except Exception as e:
         return JsonResponse({
