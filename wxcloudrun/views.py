@@ -4,17 +4,41 @@ import logging
 from django.http import JsonResponse
 from django.shortcuts import render
 from wxcloudrun.models import Counters
+from django.http import HttpRequest
 
 
 
 logger = logging.getLogger('log')
 
 
-def reply(request, _):
-    return JsonResponse({
-        'code' : 0,
-        'msg' : 'ok'
-    })
+def reply(request : HttpRequest, _):
+    
+#     {
+#   "ToUserName": "gh_919b00572d95", // 小程序/公众号的原始ID，资源复用配置多个时可以区别消息是给谁的
+#   "FromUserName": "oVneZ57wJnV-ObtCiGv26PRrOz2g", // 该小程序/公众号的用户身份openid
+#   "CreateTime": 1651049934, // 消息时间
+#   "MsgType": "text", // 消息类型
+#   "Content": "回复文本", // 消息内容
+#   "MsgId": 23637352235060880 // 唯一消息ID，可能发送多个重复消息，需要注意用此ID去重
+# }
+
+    try:
+        
+        request = json.load(request.body)
+        print(request)
+        openid = request["FromUserName"]
+        
+        return JsonResponse({
+                "ToUserName": request["FromUserName"],
+                "FromUserName": request["ToUserName"],
+                "CreateTime":  request["CreatTime"], 
+                "MsgType": "text", 
+                "Content": openid
+        })
+    except:
+        return JsonResponse({
+            'msg' : 'unknown'
+        })
 
 
 def index(request, _):
