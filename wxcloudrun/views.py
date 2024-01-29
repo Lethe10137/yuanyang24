@@ -35,9 +35,9 @@ def reply(request : HttpRequest, _):
                 "MsgType": "text", 
                 "Content": openid
         })
-    except:
+    except Exception as e:
         return JsonResponse({
-            'msg' : 'unknown'
+            'msg' : e.__repr__()
         })
 
 
