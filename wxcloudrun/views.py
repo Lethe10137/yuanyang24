@@ -48,7 +48,7 @@ def reply(request : HttpRequest, _):
             result = "查询id" + openid
         elif len(content) == 128:
             try:
-                id, time, question = decode_token(request["FromUserName"])
+                id, time, question = decode_token(request["FromUserName"], KEY_PHASE, SALT_PHASE)
                 if(id == openid):
                     result = "{} {} {}".format(id, time, question)
                 else:
