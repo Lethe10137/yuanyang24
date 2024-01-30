@@ -23,5 +23,6 @@ urlpatterns = (
     # 计数器接口
     url(r'^^api/count(/)?$', views.counter),
     url(r'^reply(/)', views.reply),
+    url(r'^cloud(/)', views.public)
 )
 
