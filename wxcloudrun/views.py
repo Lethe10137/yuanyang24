@@ -3,7 +3,7 @@ import logging
 
 from django.http import JsonResponse
 from django.shortcuts import render
-from wxcloudrun.models import Counters
+from wxcloudrun.models import Counters, Group, GroupBelong
 from django.http import HttpRequest
 
 import base64
@@ -11,9 +11,17 @@ import binascii
 
 from .utils import trunc_open_id, decode_token
 
+from . import user
+
 logger = logging.getLogger('log')
 
 
+from .strings import simple_reply, 默认回复
+
+def public(equest : HttpRequest, _):
+    return JsonResponse({
+        "hello" : "world"
+    })
 
 def reply(request : HttpRequest, _):
     
@@ -39,13 +47,40 @@ def reply(request : HttpRequest, _):
         KEY_PHASE  = b"oikjhfe3ewdsxcvjp8765r4edf"
         SALT_PHASE = b"234578okhfdwe57iknbvcde5678"
         
-        content = request["Content"]
-        
-        
-        if(content == "商务合作"):  
-            result = "商务合作信息"
-        if(content == "id"):
-            result = "查询id" + openid
+        content : str= request["Content"]
+
+        if(content.startswith("查询id")):
+            result = "你的id是: " + openid
+            
+        elif(content.startswith("创建队伍")):
+            try:
+                result = user.create_group(openid)
+            except Exception as e:
+                result = "创建队伍失败！ {}".format(e)
+                
+        elif(content.startswith("加入队伍")):
+            try:
+                try:
+                    group_id = int(content.split(" ")[1])
+                    token = int(content.split(" ")[2])
+                except:
+                    raise Exception("格式有误。示例 \n加入队伍 123 352532")
+                result = user.join_group(openid, group_id, token)
+            except Exception as e:
+                result = "加入队伍失败！ {}".format(e)
+                
+        elif(content.startswith("退出队伍")):
+            try:
+                result = user.exit_group(openid)
+            except Exception as e:
+                result = "退出队伍失败！ {}".format(e)
+                
+        elif(content.startswith("验证码")):
+            try:
+                result = user.create_token(openid)
+            except Exception as e:
+                result = "获取验证码失败！ {}".format(e)
+            
         elif len(content) == 128:
             try:
                 id, time, question = decode_token(content, KEY_PHASE, SALT_PHASE)
@@ -56,7 +91,7 @@ def reply(request : HttpRequest, _):
             except Exception as e:
                 result = "不合法的token {}".format(e)
         else:
-            result = "默认回复"
+            result = simple_reply(content)
         
         return JsonResponse({
                 "ToUserName": request["FromUserName"],
@@ -64,7 +99,12 @@ def reply(request : HttpRequest, _):
                 "CreateTime":  request["CreateTime"], 
                 "MsgType": "text", 
                 "Content": result
-        })
+        },
+            safe = False,
+            json_dumps_params={
+                'ensure_ascii': False
+            }
+            )
     except Exception as e:
         return JsonResponse({
             'msg' : e.__repr__()
