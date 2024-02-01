@@ -31,6 +31,12 @@ def exit_group(open_id):
 
     return "成功退出队伍{}".format(original_group.id)
     
+    
+def get_group_id(open_id):
+    user = get_user(open_id)
+    return user.group_id
+
+
 
 def join_group(open_id,  group_id, token):
     user : GroupBelong = get_user(open_id)
@@ -46,10 +52,10 @@ def join_group(open_id,  group_id, token):
         
             
         if datetime.now() > group.token_expire:
-            return "token过期"
+            return "验证码过期"
         
         if token != group.token:
-            return "token错误"
+            return "验证码错误"
     
         
         user.group_id = group

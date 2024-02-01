@@ -16,10 +16,10 @@ def decode_token(token, key_phrase, salt_phase):
     
     plaintext = cipher.decrypt(cipher_text)
 
-    print(binascii.hexlify(plaintext))
+    # print(binascii.hexlify(plaintext))
     
     salt_head = plaintext[:8]
-    print(binascii.hexlify(salt_head))
+    # print(binascii.hexlify(salt_head))
     salt = hashlib.sha256(salt_phase).digest()
     salt_init = salt[:8]
         

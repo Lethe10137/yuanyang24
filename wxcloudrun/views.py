@@ -8,6 +8,8 @@ from django.http import HttpRequest
 
 import base64
 import binascii
+from . import puzzle_record
+import datetime
 
 from .utils import trunc_open_id, decode_token
 
@@ -18,10 +20,76 @@ logger = logging.getLogger('log')
 
 from .strings import simple_reply, 默认回复
 
-def public(equest : HttpRequest, _):
+        
+KEY_PHASE  = b"oikjhfe3ewdsxcvjp8765r4edf"
+SALT_PHASE = b"234578okhfdwe57iknbvcde5678"
+        
+
+def public(request : HttpRequest, _):
+    try:
+        request = json.loads(request.body.decode())
+        try:
+            open_id = request["openid"]
+            assert(len(open_id) == 42)
+            binascii.unhexlify(open_id)
+        except:
+            raise(Exception("openid 不合法"))
+        
+        # print(request)
+            
+        if request["action"] == "submit":
+            token = request["token"]
+            result = submit(open_id, token)
+        elif request["action"] == "load":
+            token = request["token"]
+            result = get_load(False, token, open_id)
+        else:
+            result = "未知action".format(request["action"])
+
+    except Exception as e:
+        result = "失败原因" + e.__repr__()
     return JsonResponse({
-        "hello" : "world"
+        "msg" : result
     })
+
+
+def submit(openid, token):
+    try:
+        id, time, question = decode_token(token, KEY_PHASE, SALT_PHASE)
+        if(id == openid):
+            group_id = user.get_group_id(openid)
+            if(group_id):
+                return puzzle_record.handle_submit(group_id, time, question)
+            else:
+                return "token合法，但是由于不在队伍中，无法提交"
+        else:
+            return "获取这个token时的身份信息和当前微信账号不符" + "{} {} {}".format(id, time, question)
+    except Exception as e:
+        result = "不合法的token {}".format(e)
+    return result
+
+
+def get_load(trusted, token, openid):
+    try:
+        group = user.get_group_id(openid)
+    except:
+        return {"ok": False, "content": [], "msg": "查询不到队伍"}
+    
+    if(trusted):    
+        return puzzle_record.get_progress(group)
+    
+
+        
+    if int(token) != group.token:
+        return {"ok": False, "content": [], "msg": "验证码错误"}
+    
+    if datetime.datetime.now() > group.token_expire:
+        return {"ok": False, "content": [], "msg": "验证码过期"}
+    
+    return puzzle_record.get_progress(group)
+    
+
+    
 
 def reply(request : HttpRequest, _):
     
@@ -43,10 +111,7 @@ def reply(request : HttpRequest, _):
         byte_id = base64.urlsafe_b64decode(openid)
         openid = binascii.hexlify(byte_id).decode('utf-8')
         
-        
-        KEY_PHASE  = b"oikjhfe3ewdsxcvjp8765r4edf"
-        SALT_PHASE = b"234578okhfdwe57iknbvcde5678"
-        
+
         content : str= request["Content"]
 
         if(content.startswith("查询id")):
@@ -80,16 +145,20 @@ def reply(request : HttpRequest, _):
                 result = user.create_token(openid)
             except Exception as e:
                 result = "获取验证码失败！ {}".format(e)
+                
+        elif(content.startswith("同步进度")):
+            progress = get_load(True, "", openid)
+            print(progress)
+            if not progress["ok"] :
+                result = progress["msg"]
+            else:
+                result = json.dumps(progress["content"])
             
         elif len(content) == 128:
-            try:
-                id, time, question = decode_token(content, KEY_PHASE, SALT_PHASE)
-                if(id == openid):
-                    result = "{} {} {}".format(id, time, question)
-                else:
-                    result = "获取这个token时的身份信息和当前微信账号不符" + "{} {} {}".format(id, time, question)
-            except Exception as e:
-                result = "不合法的token {}".format(e)
+            result = submit(openid, content)
+            
+        elif(content.startswith("豹死空留皮一裘")):
+            result = json.dumps(puzzle_record.unlock_token)
         else:
             result = simple_reply(content)
         
