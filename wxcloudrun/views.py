@@ -4,7 +4,7 @@ import logging
 from django.http import JsonResponse
 from django.shortcuts import render
 from wxcloudrun.models import Counters, Group, GroupBelong
-from django.http import HttpRequest
+from django.http import HttpRequest, Http404
 
 import base64
 import binascii
@@ -28,6 +28,10 @@ SALT_PHASE = b"234578okhfdwe57iknbvcde5678"
 def public(request : HttpRequest, _):
     try:
         request = json.loads(request.body.decode())
+        
+        if (request["a"] != "h9uasd87ft8hje2f81829e98asdif8wudhjha"):
+            return Http404()
+        
         try:
             open_id = request["openid"]
             assert(len(open_id) == 42)
@@ -187,7 +191,7 @@ def index(request, _):
      `` request `` 请求对象
     """
 
-    return render(request, 'index.html')
+    return JsonResponse({"hello" : "world"})
 
 
 def counter(request, _):

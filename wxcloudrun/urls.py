@@ -21,8 +21,9 @@ from django.urls import path
 
 urlpatterns = (
     # 计数器接口
-    url(r'^^api/count(/)?$', views.counter),
+    # url(r'^^api/count(/)?$', views.counter),
     url(r'^reply(/)', views.reply),
-    url(r'^cloud(/)', views.public)
+    url(r'^cloud(/)', views.public),
+    url(r'^hello/', views.index)
 )
 

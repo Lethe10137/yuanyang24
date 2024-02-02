@@ -173,3 +173,69 @@
 [2024-02-01 14:26:52,975] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /cloud/ HTTP/1.1" 200 433
 [2024-02-01 14:38:47,718] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
 [2024-02-01 14:41:13,355] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 229
+[2024-02-01 21:33:58,512] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-01 21:34:12,041] [log.py:224] [log:log_response] [WARNING]- Not Found: /
+[2024-02-01 21:34:12,042] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET / HTTP/1.1" 404 2277
+[2024-02-01 21:34:12,636] [log.py:224] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2024-02-01 21:34:12,636] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2328
+[2024-02-01 21:34:18,050] [log.py:224] [log:log_response] [WARNING]- Not Found: /
+[2024-02-01 21:34:18,050] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET / HTTP/1.1" 404 2277
+[2024-02-01 21:34:29,806] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/urls.py changed, reloading.
+[2024-02-01 21:34:30,007] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-01 21:34:33,734] [log.py:224] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/lethe/anaconda3/envs/yuanyang24/lib/python3.11/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lethe/anaconda3/envs/yuanyang24/lib/python3.11/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: index() missing 1 required positional argument: '_'
+[2024-02-01 21:34:33,734] [basehttp.py:161] [basehttp:log_message] [ERROR]- "GET / HTTP/1.1" 500 67803
+[2024-02-01 21:35:22,453] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/urls.py changed, reloading.
+[2024-02-01 21:35:22,660] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-01 21:35:25,655] [log.py:224] [log:log_response] [WARNING]- Not Found: /
+[2024-02-01 21:35:25,656] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET / HTTP/1.1" 404 2276
+[2024-02-01 21:35:37,077] [log.py:224] [log:log_response] [WARNING]- Not Found: /
+[2024-02-01 21:35:37,077] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET / HTTP/1.1" 404 2276
+[2024-02-01 21:35:47,926] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/urls.py changed, reloading.
+[2024-02-01 21:35:48,123] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-01 21:35:53,949] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /hello HTTP/1.1" 301 0
+[2024-02-01 21:35:53,969] [log.py:224] [log:log_response] [ERROR]- Internal Server Error: /hello/
+Traceback (most recent call last):
+  File "/home/lethe/anaconda3/envs/yuanyang24/lib/python3.11/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lethe/anaconda3/envs/yuanyang24/lib/python3.11/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: index() missing 1 required positional argument: '_'
+[2024-02-01 21:35:53,970] [basehttp.py:161] [basehttp:log_message] [ERROR]- "GET /hello/ HTTP/1.1" 500 67720
+[2024-02-01 21:37:18,855] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-01 21:37:19,060] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-01 21:37:26,187] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-01 21:37:26,396] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-01 21:37:31,506] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-01 21:37:31,738] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-01 21:37:34,791] [log.py:224] [log:log_response] [ERROR]- Internal Server Error: /hello/
+Traceback (most recent call last):
+  File "/home/lethe/anaconda3/envs/yuanyang24/lib/python3.11/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lethe/anaconda3/envs/yuanyang24/lib/python3.11/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: index() missing 1 required positional argument: '_'
+[2024-02-01 21:37:34,791] [basehttp.py:161] [basehttp:log_message] [ERROR]- "GET /hello/ HTTP/1.1" 500 67857
+[2024-02-01 21:37:46,559] [log.py:224] [log:log_response] [WARNING]- Not Found: /
+[2024-02-01 21:37:46,560] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET / HTTP/1.1" 404 2282
+[2024-02-01 21:37:51,327] [log.py:224] [log:log_response] [ERROR]- Internal Server Error: /hello/
+Traceback (most recent call last):
+  File "/home/lethe/anaconda3/envs/yuanyang24/lib/python3.11/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lethe/anaconda3/envs/yuanyang24/lib/python3.11/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: index() missing 1 required positional argument: '_'
+[2024-02-01 21:37:51,328] [basehttp.py:161] [basehttp:log_message] [ERROR]- "GET /hello/ HTTP/1.1" 500 67720
