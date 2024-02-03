@@ -176,14 +176,14 @@ def reply(request : HttpRequest, _):
             if(len(query) == 2):
                 result = purchase.look_up_hint(openid, query[1])
             else:
-                result = "格式错误。示例：\n查看提示 1）"
+                result = "格式错误。示例：\n查看提示 1"
                 
         elif(content.startswith("购买提示")):
             query = content.strip().split(" ")
             if(len(query) == 2):
                 result = purchase.purchase_hint(openid, query[1])
             else:
-                result = "格式错误。示例：\n购买提示 1）"
+                result = "格式错误。示例：\n购买提示 1"
                 
         elif(content.startswith("查询积分")):
 

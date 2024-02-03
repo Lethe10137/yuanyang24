@@ -67,7 +67,7 @@ def check_credits(group: Group):
     consume = group.consumed
     mercy = get_mercy()
     
-    return "{}组 累计获得{}分，消耗{}分，系统赠送{}分 余额{}分".format(group.id, earn, consume, mercy,earn - consume + mercy)
+    return "队伍{} 累计获得{}分，消耗{}分，系统赠送{}分 余额{}分".format(group.id, earn, consume, mercy,earn - consume + mercy)
     
 @check_group  
 @use_hint
