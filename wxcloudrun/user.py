@@ -27,7 +27,7 @@ def exit_group(open_id):
             user.group_id = None
             user.save()
     else:
-        raise Exception("所在队伍{}有提交记录，不能退出！".format(original_group.id))
+        raise Exception("所在队伍{}有提交或购买记录，不能退出！".format(original_group.id))
 
     return "成功退出队伍{}".format(original_group.id)
     
@@ -35,6 +35,12 @@ def exit_group(open_id):
 def get_group_id(open_id):
     user = get_user(open_id)
     return user.group_id
+
+def get_group_id_lock(open_id):
+    user = get_user(open_id)
+    if (user.group_id):
+        return Group.objects.select_for_update().get(pk = user.group_id.id)
+    raise Exception("请先加入或创建队伍")
 
 
 

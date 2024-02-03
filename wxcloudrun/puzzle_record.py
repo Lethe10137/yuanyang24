@@ -41,11 +41,20 @@ titles = [
     "笨龙笨事",
     "//只有.三个.词语",
     "龙的笔记本",
-    "六十律",
+    "星与六十",
     "Meta: 龙绘",
-    "Final Meta:笑",
+    "Final Meta: 让我们的色彩为世间增添欢笑",
 ]
 
+titles_to_num = {
+    
+}
+
+i = 0
+for title in titles:
+    titles_to_num[title] = i
+    i += 1
+    
 from wxcloudrun.models import Group, GroupBelong, Purchase
 
 time_epoch = 17_0000_0000_000_000

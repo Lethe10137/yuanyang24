@@ -27,6 +27,7 @@ class Group(models.Model):
     token_expire = models.DateTimeField(null = True)
     
     credit = models.IntegerField(default = 0)
+    consumed = models.IntegerField(default = 0)
     exitable = models.BooleanField(default = True)
     
     # T0到T20的21个字段，类型是bigint，初始值为null
@@ -73,6 +74,16 @@ class GroupBelong(models.Model):
     group_id = models.ForeignKey('Group', on_delete=models.CASCADE, null = True)
     
 
+class Hint(models.Model):
+    class Meta:
+        db_table = 'hint'
+        
+    id = models.IntegerField(primary_key=True, unique = True)
+    price = models.IntegerField(default = 0)
+    content = models.TextField(null = True)
+    question = models.TextField(null = True)
+    
+
 class Purchase(models.Model):
     
     class Meta:
@@ -81,7 +92,7 @@ class Purchase(models.Model):
     id = models.AutoField(primary_key=True)
     createdAt = models.DateTimeField(default=datetime.now(),)
     group_id = models.ForeignKey('Group', on_delete=models.CASCADE)
-    hint_id = models.IntegerField()
+    hint_id = models.ForeignKey('Hint', on_delete= models.CASCADE)
     cost = models.PositiveIntegerField()
         
         

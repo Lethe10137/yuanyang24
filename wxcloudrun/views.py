@@ -8,7 +8,7 @@ from django.http import HttpRequest, Http404
 
 import base64
 import binascii
-from . import puzzle_record
+from . import puzzle_record, purchase
 import datetime
 
 from .utils import trunc_open_id, decode_token
@@ -161,8 +161,36 @@ def reply(request : HttpRequest, _):
         elif len(content) == 128:
             result = submit(openid, content)
             
-        elif(content.startswith("豹死空留皮一裘")):
-            result = json.dumps(puzzle_record.unlock_token)
+        # elif(content.startswith("豹死空留皮一裘")):
+        #     result = json.dumps(puzzle_record.unlock_token)
+            
+        elif(content.startswith("查询提示列表")):
+            query = content.strip().split(" ")
+            if(len(query) == 2):
+                result = purchase.get_puzzle_list(query[1])
+            else:
+                result = "格式错误。示例：\n查询提示列表 第二道题（上）"
+                
+        elif(content.startswith("查看提示")):
+            query = content.strip().split(" ")
+            if(len(query) == 2):
+                result = purchase.look_up_hint(openid, query[1])
+            else:
+                result = "格式错误。示例：\n查看提示 1）"
+                
+        elif(content.startswith("购买提示")):
+            query = content.strip().split(" ")
+            if(len(query) == 2):
+                result = purchase.purchase_hint(openid, query[1])
+            else:
+                result = "格式错误。示例：\n购买提示 1）"
+                
+        elif(content.startswith("查询积分")):
+
+            result = purchase.check_credits(openid)
+
+        
+            
         else:
             result = simple_reply(content)
         
