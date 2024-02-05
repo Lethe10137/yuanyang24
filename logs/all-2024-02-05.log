@@ -1,1 +1,7 @@
 [2024-02-05 12:17:21,382] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-05 12:30:22,231] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-05 12:30:36,981] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-05 13:00:59,514] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-05 13:01:30,883] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 584
+[2024-02-05 13:27:48,761] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/urls.py changed, reloading.
+[2024-02-05 13:27:48,960] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader

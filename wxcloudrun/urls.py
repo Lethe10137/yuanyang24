@@ -24,6 +24,6 @@ urlpatterns = (
     # url(r'^^api/count(/)?$', views.counter),
     url(r'^reply(/)', views.reply),
     url(r'^cloud(/)', views.public),
-    url(r'^hello/', views.index)
+    url(r'^hello/', views.index),
 )
 
