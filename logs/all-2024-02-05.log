@@ -5,3 +5,13 @@
 [2024-02-05 13:01:30,883] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 584
 [2024-02-05 13:27:48,761] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/urls.py changed, reloading.
 [2024-02-05 13:27:48,960] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-05 14:36:00,660] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-05 14:36:12,226] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 584
+[2024-02-05 14:36:16,563] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 362
+[2024-02-05 14:36:35,087] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 375
+[2024-02-05 14:43:35,614] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-05 14:43:43,635] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 196
+[2024-02-05 14:46:16,561] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 247
+[2024-02-05 14:46:31,537] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/puzzle_record.py changed, reloading.
+[2024-02-05 14:46:31,791] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-05 14:48:45,647] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 249

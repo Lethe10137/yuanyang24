@@ -1,6 +1,6 @@
 from .models import Purchase, Group, Hint
 
-from .puzzle_record import  titles
+from .titles import  titles
 
 import re
 
