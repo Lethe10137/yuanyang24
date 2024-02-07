@@ -393,7 +393,7 @@ def handle_submit(group, time, question):
                 return "已有更早的提交"
 
             
-        return "成功提交unix时间戳为{}的题目 {} 目前累计获得积分{}, 余额{}".format(int(time) / 1000000, titles[question_id], group.credit,get_balance(group)  )
+        return "成功提交unix时间戳为{}的题目 {} 目前累计获得龙币{}, 余额{}".format(int(time) / 1000000, titles[question_id], group.credit,get_balance(group)  )
 
     except Exception as e:
         return "提交失败， {}".format(e.__repr__())

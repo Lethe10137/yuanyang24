@@ -94,7 +94,7 @@ def purchase_hint(group: Group, hintid):
     balance = get_balance(group)
     price = get_price(hint)
     if (balance < price):
-        return "积分余额不足，需要{}积分, 当前余额是{}积分".format(price, balance)
+        return "龙币余额不足，需要{}龙币, 当前余额是{}龙币".format(price, balance)
     
     group.consumed += price
     group.exitable = False
@@ -117,7 +117,7 @@ def get_puzzle_list(name):
     while(True):
         try:
             hint = Hint.objects.get(pk = hint_id)
-            result+= "    {} {}积分 编号{}\n".format(
+            result+= "    {} {}龙币 编号{}\n".format(
                   hint.question,get_price(hint),hint.id
             )
             hint_id += 1

@@ -63,13 +63,13 @@ def submit(openid, token):
             if group_id:
                 return puzzle_record.handle_submit(group_id, time, question)
             else:
-                return "token合法，但是由于不在队伍中，无法提交"
+                return "龙之徽记合法，但是由于不在队伍中，无法提交"
         else:
-            return "获取这个token时的身份信息和当前微信账号不符" + "{} {} {}".format(
+            return "获取这个龙之徽记时的身份信息和当前微信账号不符" + "{} {} {}".format(
                 id, time, question
             )
     except Exception as e:
-        result = "不合法的token {}".format(e)
+        result = "不合法的龙之徽记 {}".format(e)
     return result
 
 
@@ -182,7 +182,7 @@ def reply(request: HttpRequest, _):
             else:
                 result = "格式错误。示例：\n购买提示 1"
 
-        elif content.startswith("查询积分"):
+        elif content.startswith("查询龙币"):
             result = purchase.check_credits(openid)
 
         # elif content == "图片测试":
