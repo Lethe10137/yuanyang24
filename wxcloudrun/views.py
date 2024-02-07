@@ -212,7 +212,7 @@ def reply(request: HttpRequest, _):
                             "Title": "Relax｜今日推荐音乐",
                             "Description": "每日推荐一个好听的音乐，感谢收听～",
                             "PicUrl": "https://y.qq.com/music/photo_new/T002R300x300M000004NEn9X0y2W3u_1.jpg?max_age=2592000",
-                            "Url": "https://c.y.qq.com/base/fcgi-bin/u?__=0zVuus4U",
+                            "Url": "https://mellow-conkies-f83e36.netlify.app/",
                         }
                     ],
                 },
@@ -231,8 +231,29 @@ def reply(request: HttpRequest, _):
                         {
                             "Title": "test",
                             "Description": "每日推荐一个好听的音乐，感谢收听～",
-                            "PicUrl": "http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/yvMGNJZUwCcOrBzr6W35cqodTQZRKpdnZh8Ej9nKlo9wXyTwG0nswuR8zWbTOe5mBfvIIcvNEIoO1po50ZUKWg\/0?wx_fmt=jpeg",
-                            "Url": "http:\/\/mp.weixin.qq.com\/s?__biz=MzU0OTA4NTk1Mw==&mid=100000380&idx=1&sn=e7c7814aca5a59e83cb80a96534816bc&chksm=7bb474124cc3fd04c8bfb027c1926dda8311c1a5f2273e8f052fdcc8ca301e57f12945be1488#rd",
+                            "PicUrl": "http://mmbiz.qpic.cn/mmbiz_jpg/yvMGNJZUwCcOrBzr6W35cqodTQZRKpdnZh8Ej9nKlo9wXyTwG0nswuR8zWbTOe5mBfvIIcvNEIoO1po50ZUKWg/0?wx_fmt=jpeg",
+                            "Url": "http://mp.weixin.qq.com/s?__biz=MzU0OTA4NTk1Mw==&mid=100000380&idx=1&sn=e7c7814aca5a59e83cb80a96534816bc&chksm=7bb474124cc3fd04c8bfb027c1926dda8311c1a5f2273e8f052fdcc8ca301e57f12945be1488#rd",
+                        }
+                    ],
+                },
+                safe=False,
+                json_dumps_params={"ensure_ascii": False},
+            )
+            
+        elif content == "推送测试3":
+            return JsonResponse(
+                {
+                    "ToUserName": request["FromUserName"],
+                    "FromUserName": request["ToUserName"],
+                    "CreateTime": request["CreateTime"],
+                    "MsgType": "news",
+                    "ArticleCount": 1,
+                    "Articles": [
+                        {
+                            "Title": "test",
+                            "Description": "每日推荐一个好听的音乐，感谢收听～",
+                            "PicUrl": "http://mmbiz.qpic.cn/mmbiz_jpg/yvMGNJZUwCcOrBzr6W35cqodTQZRKpdnZh8Ej9nKlo9wXyTwG0nswuR8zWbTOe5mBfvIIcvNEIoO1po50ZUKWg/0?wx_fmt=jpeg",
+                            "Url": "https://www.zhihu.com",
                         }
                     ],
                 },
