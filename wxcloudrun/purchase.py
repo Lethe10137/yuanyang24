@@ -67,12 +67,16 @@ def check_credits(group: Group):
     consume = group.consumed
     mercy = get_mercy()
     
-    return "队伍{} 累计获得{}分，消耗{}分，系统赠送{}分 余额{}分".format(group.id, earn, consume, mercy,earn - consume + mercy)
+    return "队伍{} 累计获得{}龙币，消耗{}龙币，系统赠送{}龙币 余额{}龙币".format(group.id, earn, consume, mercy,earn - consume + mercy)
     
 @check_group  
 @use_hint
 def look_up_hint(group, hintid):
-    hintid = int(hintid)
+    try:
+        hintid = int(hintid)
+    except:
+        return "提示编号应该是数字"
+    
     hint = Hint.objects.get(pk = hintid)
     
     if Purchase.objects.filter(group_id = group, hint_id = hint).exists():
@@ -85,7 +89,10 @@ def look_up_hint(group, hintid):
 @check_group
 @use_hint
 def purchase_hint(group: Group, hintid):
-    hintid = int(hintid)
+    try:
+        hintid = int(hintid)
+    except:
+        return "提示编号应该是数字"
     hint = Hint.objects.get(pk = hintid)
     
     if Purchase.objects.filter(group_id = group, hint_id = hint).exists():

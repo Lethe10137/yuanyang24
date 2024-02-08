@@ -18,7 +18,7 @@ from . import user
 logger = logging.getLogger("log")
 
 
-from .strings import simple_reply, 默认回复
+from .strings import simple_reply, first_reply, necessary_reply
 
 
 KEY_PHASE = b"oikjhfe3ewdsxcvjp8765r4edf"
@@ -92,6 +92,52 @@ def get_load(trusted, token, openid):
 
 
 def reply(request: HttpRequest, _):
+    now = datetime.datetime.now().timestamp()
+    time_diff = now - datetime.datetime(2024, 2, 2, 11, 0, 0).timestamp()
+
+    if time_diff < 0:
+        return early_handle_reply(request, time_diff)
+
+    else:
+        return normal_handle_reply(request)
+
+
+def early_handle_reply(request: HttpRequest, time_diff):
+    try:
+        request = json.loads(request.body.decode())
+        content: str = request["Content"]
+
+        necessary = necessary_reply(content)
+
+        if necessary:
+            result = necessary
+        else:
+            result = """
+在回复中标上【留言】，可以提高被看到的几率~
+
+如果您想成为【撰稿人】或寻求【商业合作】，回复相应关键词试试？！
+
+如果你正在新春闯关，""" + "闯关还有{:.5f}时辰开始".format(
+                -time_diff / 7200
+            )
+
+        return JsonResponse(
+            {
+                "ToUserName": request["FromUserName"],
+                "FromUserName": request["ToUserName"],
+                "CreateTime": request["CreateTime"],
+                "MsgType": "text",
+                "Content": result,
+            },
+            safe=False,
+            json_dumps_params={"ensure_ascii": False},
+        )
+
+    except Exception as e:
+        return JsonResponse({"msg": e.__repr__()})
+
+
+def normal_handle_reply(request: HttpRequest):
 
     #     {
     #   "ToUserName": "gh_919b00572d95", // 小程序/公众号的原始ID，资源复用配置多个时可以区别消息是给谁的
@@ -115,7 +161,16 @@ def reply(request: HttpRequest, _):
 
         msgtype = "text"
 
-        if content.startswith("查询id"):
+        first_result = first_reply(content)
+        necessary_result = necessary_reply(content)
+
+        if first_result:
+            result = first_result
+
+        elif necessary_result:
+            result = necessary_result
+
+        elif content.startswith("查询id"):
             result = "你的id是: " + openid
 
         elif content.startswith("创建队伍"):
@@ -193,7 +248,7 @@ def reply(request: HttpRequest, _):
         #             "CreateTime": request["CreateTime"],
         #             "MsgType": "image",
         #             "Image":{
-        #                 "MediaId" : 
+        #                 "MediaId" :
         #             }
         #         },
         #         safe=False,
@@ -239,7 +294,7 @@ def reply(request: HttpRequest, _):
                 safe=False,
                 json_dumps_params={"ensure_ascii": False},
             )
-            
+
         elif content == "推送测试3":
             return JsonResponse(
                 {

@@ -23,7 +23,8 @@ result = requests.post(
     # "https://test2.yuanyang.app/cloud/",
     # "http://testapi.yuanyang.app:8080/",
     # "http://8.219.88.123:8080/",
-    "https://back.yuanyang.app/",
+    # "https://back.yuanyang.app/",
+    "https://wrapper-mzvnogjrnd.cn-hangzhou.fcapp.run",
     json = message
 )
 
