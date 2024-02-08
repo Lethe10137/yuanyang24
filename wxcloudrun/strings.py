@@ -228,6 +228,9 @@ Zzz Zzz Zzz
 
 """
 
+赌场 = """当你正准备掏龙币的时候，娱乐场被忽然冲进的一群龙给查封了。还好，你没有尝试，否则......毕竟半仙总是念叨，久赌必输啊！
+"""
+
 first_replys = {
     "龙腾四海飞龙在天" : 初始回复,
     "查询提示列表 序章" :  序章提示列表,
@@ -276,6 +279,9 @@ def necessary_reply(content):
 def simple_reply(content):
     if(content == "提示"):  
         return 提示
+    
+    if("下注" in content or "押注" in content or "加注" in content):
+        return 赌场
     
     return 默认回复
     
