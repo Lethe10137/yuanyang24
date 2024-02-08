@@ -138,7 +138,7 @@ def purchase_answer(group: Group, title):
     
     
     if Skip.objects.filter(group_id = group, question_id = question_id).exists():
-        return "业已购买该答案\n" + answer
+        return "你或你的队友已购买该答案\n" + answer
     
     
     balance = get_balance(group)
@@ -167,7 +167,7 @@ def purchase_hint(group: Group, hintid):
     hint = Hint.objects.get(pk = hintid)
     
     if Purchase.objects.filter(group_id = group, hint_id = hint).exists():
-        return "业已购买该提示\n" + hint.question+"\n"+hint.content
+        return "你或你的队友已购买该提示\n" + hint.question+"\n"+hint.content
     
     balance = get_balance(group)
     price = get_price(hint)
