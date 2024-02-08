@@ -45,13 +45,19 @@ def get_normal_inflation():
     
 def get_additional_inflation():
     now = get_time()
-    period = 5 * 3600 + 4 * 86400
-    if(now >= period):
-        return 3 
+    period0 = 86400
+    period1 = 5 * 3600 + 4 * 86400
     
-    print((3 ** ((period - now) /period)))
+    if(now < period0):
+        this_period = (period0 - now) / period0 
+        return 18 * (3 ** this_period)
     
-    return 3  * (3 ** ((period - now) /period))
+    if(now < period1):
+        this_period = (period1 - now) / (period1 - period0) 
+        return 3 * (6 ** this_period)
+    
+    return 3
+    
     
 
 def check_group(func):
@@ -116,7 +122,7 @@ def get_answer_price(title):
         return "题目不存在或不支持购买答案"
     
     question_id = titles_to_num[title]
-    price = int(get_additional_inflation() * get_credit(question_id))
+    price = int(get_additional_inflation() * credits[question_id])
     return "{}龙币".format(price)
 
 
@@ -126,7 +132,7 @@ def purchase_answer(group: Group, title):
         return "题目不存在或不支持购买答案"
     
     question_id = titles_to_num[title]
-    price = int(get_additional_inflation() * get_credit(question_id))
+    price = int(get_additional_inflation() * credits[question_id])
     
     answer = answers[question_id][0]
     

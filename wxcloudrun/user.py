@@ -77,14 +77,14 @@ def join_group(open_id,  group_id, token):
             group.member3 = user
             group.save()
             user.save()
-        elif group.member4 is None:
-            group.member4 = user
-            group.save()
-            user.save()
-        elif group.member5 is None:
-            group.member5 = user
-            group.save()
-            user.save()
+        # elif group.member4 is None:
+        #     group.member4 = user
+        #     group.save()
+        #     user.save()
+        # elif group.member5 is None:
+        #     group.member5 = user
+        #     group.save()
+        #     user.save()
         else:
             # 如果没有空位，则撤销对group和groupbelong的任何修改
             raise Exception("队伍已满")
