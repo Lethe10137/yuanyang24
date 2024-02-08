@@ -176,3 +176,101 @@ AttributeError: 'str' object has no attribute 'get'
 [2024-02-08 12:35:04,980] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
 [2024-02-08 12:35:07,709] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 263
 [2024-02-08 12:35:12,230] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 224
+[2024-02-08 13:11:14,671] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:11:46,957] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 584
+[2024-02-08 13:11:52,207] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 238
+[2024-02-08 13:12:45,385] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:12:45,574] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:12:52,381] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 229
+[2024-02-08 13:13:23,510] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 459
+[2024-02-08 13:13:41,339] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 459
+[2024-02-08 13:14:47,806] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 375
+[2024-02-08 13:17:26,230] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:17:38,042] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 362
+[2024-02-08 13:18:10,524] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 180
+[2024-02-08 13:18:30,091] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 189
+[2024-02-08 13:18:41,699] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 362
+[2024-02-08 13:18:44,690] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 362
+[2024-02-08 13:18:55,750] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 266
+[2024-02-08 13:22:42,411] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:22:55,765] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 266
+[2024-02-08 13:28:41,647] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:28:55,478] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 266
+[2024-02-08 13:29:19,954] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:29:20,164] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:29:22,224] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:29:22,437] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:29:34,340] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 206
+[2024-02-08 13:30:17,885] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:30:18,076] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:30:23,185] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:30:23,380] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:30:27,471] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:30:27,684] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:30:34,801] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:30:34,984] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:30:48,132] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 206
+[2024-02-08 13:31:30,443] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:31:30,656] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:32:37,148] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:32:37,360] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:32:41,447] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:32:41,661] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:32:53,964] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 206
+[2024-02-08 13:33:58,235] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:33:58,439] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:34:09,655] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 207
+[2024-02-08 13:34:16,658] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:34:16,847] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:35:11,252] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:35:11,463] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:35:14,561] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:35:14,757] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:35:24,727] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 206
+[2024-02-08 13:37:20,650] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/strings.py changed, reloading.
+[2024-02-08 13:37:20,836] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:37:22,920] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/strings.py changed, reloading.
+[2024-02-08 13:37:23,132] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:38:01,427] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/strings.py changed, reloading.
+[2024-02-08 13:38:01,619] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:38:03,694] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/strings.py changed, reloading.
+[2024-02-08 13:38:03,891] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:38:05,971] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/strings.py changed, reloading.
+[2024-02-08 13:38:06,157] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:38:15,280] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 13:38:15,473] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:38:21,575] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 13:38:21,765] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:38:25,863] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 13:38:26,073] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:38:26,896] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 704
+[2024-02-08 13:38:41,222] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:38:41,414] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:38:43,504] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:38:43,729] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:38:50,839] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:38:51,046] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:38:53,110] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:38:53,309] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:39:03,405] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:39:03,591] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:39:07,703] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:39:07,886] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:39:17,004] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:39:17,214] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:39:37,405] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 13:39:37,586] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:39:44,690] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 13:39:44,896] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:39:46,979] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 13:39:47,188] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:39:50,284] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 13:39:50,492] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:39:56,605] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 13:39:56,814] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:39:59,906] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 13:40:00,108] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:40:05,182] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 194
+[2024-02-08 13:40:09,258] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 13:40:09,453] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 13:40:17,594] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 152

@@ -22,6 +22,11 @@ record = {
     "117029381625775928": 20,
 }
 
+
+credits = [
+    500,500,500,800,800,1000,1000,1200,1500,2000,500,500,500,800,1000,1000,1500,1800,1800,2000,8888888
+]
+
 # titles = [
 #     "第二道题（上）",
 #     "格线之间",
@@ -45,6 +50,55 @@ record = {
 #     "Meta: 龙绘",
 #     "Final Meta: 让我们的色彩为世间增添欢笑",
 # ]
+
+answers = [
+    ["ORANGE LETTUCE", "LETTUCE ORANGE", "ORANGE", "LETTUCE", "E", "C6", "6C", "U IS THE FIFTH", "THE FOURTH LETTER IS T", "THE THIRD LETTER IS T", "IS E", "L"],
+    ["blue salad"],
+    ["tomato theory"],
+    ["grey wolves" ,"a grey wolf", "plural ver"],
+    ["sunset spring", "find stingers"],
+    ["coffee berries"],
+    ["environmental-friendly bikes"],
+    ["white ganesh","Gkessgjkrbpmqgsyryhhvhiw", "Fibonaccireadsdiagonally"],
+    ["lavender lights"],
+    ["breakdown"],
+    ["误惊征袖湿啼痕", "忆山摇膝石上晚", "报答春光知有处", "荷叶罗裙一色裁", "晴彩辉煌映画栏", "龙斗雌雄势已分", "月黑雁飞高", "归人望烟火"],
+    ["楚峡云归无觅处"],
+    ["屏妆水墨夸陶弼"],
+    ["四川昝帅尚粗豪"],
+    ["巷议街谈一粲然","发吉利话到站内信"],
+    ["疏蓼黄芦宜掩映"],
+    ["珑板腰肢捉板歌", "珑", "板","腰","肢","捉", "歌"],
+    ["恨难得兮仰天悲", "恨","难","得","兮","仰","天","悲"],
+    ["碑折松枯山火烧", "熊孺登", "xiongrudeng", "vindemiatrix", "经古墓"],
+    ["草荒柏穼"],
+    ["#ffff00#00ffff#00ff00#ff00ff#ff0000#0000ff#3bc041#f379ab#e1cb2f#87fdf1#34a0a2#fa6939O::U::R:::H::U::G:E::A::N:::N::I::V:E::R::S:::A::R::Y"]
+]
+
+purchaseable_titles = [
+    # "椒图轩",
+    # "螭首居",
+    "蒲牢亭",
+    "蚩吻台",
+    "鳌鱼楼",
+    "负屃阁",
+    "囚牛斋",
+    "螭虎堂",
+    "金吾宫",
+    # "蛟龙殿",
+    # "狴犴轩",
+    # "赑屃居",
+    "蟋蜴亭",
+    "嘲风台",
+    "狻猊楼",
+    "貔貅阁",
+    "饕餮斋",
+    "睚眦堂",
+    "龙马宫",
+    # "应龙殿",
+    # "万龙之巅",
+]
+
 
 titles = [
     "椒图轩",

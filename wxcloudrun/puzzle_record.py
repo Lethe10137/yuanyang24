@@ -1,7 +1,7 @@
-from .titles import unlock_token, titles_to_num, titles, record
+from .titles import unlock_token, titles_to_num, titles, record, credits
     
 from wxcloudrun.models import Group, GroupBelong, Purchase
-from .purchase import get_balance
+from .purchase import get_balance, get_credit
 
 time_epoch = 17_0000_0000_000_000
      
@@ -168,9 +168,7 @@ def get_progress(group):
     except Exception as e:
         return {"ok": False, "content": [], "msg": e.__repr__()}
 
-credits = [
-    500,500,500,800,800,1000,1000,1200,1500,2000,500,500,500,800,1000,1000,1500,1800,1800,2000,8888888
-]
+
 
 def handle_submit(group, time, question):
     print(group, time, question)
@@ -186,7 +184,7 @@ def handle_submit(group, time, question):
         if question_id == 0:
             if group.t0 == None or group.t0 > int(time):
                 if(group.t0 == None):
-                    group.credit += credits[0]
+                    group.credit += get_credit(0)
                 group.t0 = int(time)
                 group.save()
             else:
@@ -196,7 +194,7 @@ def handle_submit(group, time, question):
         if question_id == 1:
             if group.t1 == None or group.t1 > int(time):
                 if(group.t1 == None):
-                    group.credit += credits[1]
+                    group.credit += get_credit(1)
                 group.t1 = int(time)
                 group.save()
             else:
@@ -206,7 +204,7 @@ def handle_submit(group, time, question):
         if question_id == 2:
             if group.t2 == None or group.t2 > int(time):
                 if(group.t2 == None):
-                    group.credit += credits[2]
+                    group.credit += get_credit(2)
                 group.t2 = int(time)
                 group.save()
             else:
@@ -216,7 +214,7 @@ def handle_submit(group, time, question):
         if question_id == 3:
             if group.t3 == None or group.t3 > int(time):
                 if(group.t3 == None):
-                    group.credit += credits[3]
+                    group.credit += get_credit(3)
                 group.t3 = int(time)
                 group.save()
             else:
@@ -226,7 +224,7 @@ def handle_submit(group, time, question):
         if question_id == 4:
             if group.t4 == None or group.t4 > int(time):
                 if(group.t4 == None):
-                    group.credit += credits[4]
+                    group.credit += get_credit(4)
                 group.t4 = int(time)
                 group.save()
             else:
@@ -236,7 +234,7 @@ def handle_submit(group, time, question):
         if question_id == 5:
             if group.t5 == None or group.t5 > int(time):
                 if(group.t5 == None):
-                    group.credit += credits[5]
+                    group.credit += get_credit(5)
                 group.t5 = int(time)
                 group.save()
             else:
@@ -246,7 +244,7 @@ def handle_submit(group, time, question):
         if question_id == 6:
             if group.t6 == None or group.t6 > int(time):
                 if(group.t6 == None):
-                    group.credit += credits[6]
+                    group.credit += get_credit(6)
                 group.t6 = int(time)
                 group.save()
             else:
@@ -256,7 +254,7 @@ def handle_submit(group, time, question):
         if question_id == 7:
             if group.t7 == None or group.t7 > int(time):
                 if(group.t7 == None):
-                    group.credit += credits[7]
+                    group.credit += get_credit(7)
                 group.t7 = int(time)
                 group.save()
             else:
@@ -266,7 +264,7 @@ def handle_submit(group, time, question):
         if question_id == 8:
             if group.t8 == None or group.t8 > int(time):
                 if(group.t8 == None):
-                    group.credit += credits[8]
+                    group.credit += get_credit(8)
                 group.t8 = int(time)
                 group.save()
             else:
@@ -276,7 +274,7 @@ def handle_submit(group, time, question):
         if question_id == 9:
             if group.t9 == None or group.t9 > int(time):
                 if(group.t9 == None):
-                    group.credit += credits[9]
+                    group.credit += get_credit(9)
                 group.t9 = int(time)
                 group.save()
             else:
@@ -286,7 +284,7 @@ def handle_submit(group, time, question):
         if question_id == 10:
             if group.t10 == None or group.t10 > int(time):
                 if(group.t10 == None):
-                    group.credit += credits[10]
+                    group.credit += get_credit(10)
                 group.t10 = int(time)
                 group.save()
             else:
@@ -296,7 +294,7 @@ def handle_submit(group, time, question):
         if question_id == 11:
             if group.t11 == None or group.t11 > int(time):
                 if(group.t11 == None):
-                    group.credit += credits[11]
+                    group.credit += get_credit(11)
                 group.t11 = int(time)
                 group.save()
             else:
@@ -306,7 +304,7 @@ def handle_submit(group, time, question):
         if question_id == 12:
             if group.t12 == None or group.t12 > int(time):
                 if(group.t12 == None):
-                    group.credit += credits[12]
+                    group.credit += get_credit(12)
                 group.t12 = int(time)
                 group.save()
             else:
@@ -316,7 +314,7 @@ def handle_submit(group, time, question):
         if question_id == 13:
             if group.t13 == None or group.t13 > int(time):
                 if(group.t13 == None):
-                    group.credit += credits[13]
+                    group.credit += get_credit(13)
                 group.t13 = int(time)
                 group.save()
             else:
@@ -326,7 +324,7 @@ def handle_submit(group, time, question):
         if question_id == 14:
             if group.t14 == None or group.t14 > int(time):
                 if(group.t14 == None):
-                    group.credit += credits[14]
+                    group.credit += get_credit(14)
                 group.t14 = int(time)
                 group.save()
             else:
@@ -336,7 +334,7 @@ def handle_submit(group, time, question):
         if question_id == 15:
             if group.t15 == None or group.t15 > int(time):
                 if(group.t15 == None):
-                    group.credit += credits[15]
+                    group.credit += get_credit(15)
                 group.t15 = int(time)
                 group.save()
             else:
@@ -346,7 +344,7 @@ def handle_submit(group, time, question):
         if question_id == 16:
             if group.t16 == None or group.t16 > int(time):
                 if(group.t16 == None):
-                    group.credit += credits[16]
+                    group.credit += get_credit(16)
                 group.t16 = int(time)
                 group.save()
             else:
@@ -356,7 +354,7 @@ def handle_submit(group, time, question):
         if question_id == 17:
             if group.t17 == None or group.t17 > int(time):
                 if(group.t17 == None):
-                    group.credit += credits[17]
+                    group.credit += get_credit(17)
                 group.t17 = int(time)
                 group.save()
             else:
@@ -366,7 +364,7 @@ def handle_submit(group, time, question):
         if question_id == 18:
             if group.t18 == None or group.t18 > int(time):
                 if(group.t18 == None):
-                    group.credit += credits[18]
+                    group.credit += get_credit(18)
                 group.t18 = int(time)
                 group.save()
             else:
@@ -376,7 +374,7 @@ def handle_submit(group, time, question):
         if question_id == 19:
             if group.t19 == None or group.t19 > int(time):
                 if(group.t19 == None):
-                    group.credit += credits[19]
+                    group.credit += get_credit(19)
                 group.t19 = int(time)
                 group.save()
             else:
@@ -386,7 +384,7 @@ def handle_submit(group, time, question):
         if question_id == 20:
             if group.t20 == None or group.t20 > int(time):
                 if(group.t20 == None):
-                    group.credit += credits[20]
+                    group.credit += get_credit(20)
                 group.t20 = int(time)
                 group.save()
             else:

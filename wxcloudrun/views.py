@@ -236,6 +236,20 @@ def normal_handle_reply(request: HttpRequest):
                 result = purchase.purchase_hint(openid, query[1])
             else:
                 result = "格式错误。示例：\n购买提示 1"
+                
+        elif content.startswith("购买答案"):
+            query = content.strip().split(" ")
+            if len(query) == 2:
+                result = purchase.purchase_answer(openid, query[1])
+            else:
+                result = "格式错误。示例：\n购买答案 囚牛斋"
+                
+        elif content.startswith("查询答案价格"):
+            query = content.strip().split(" ")
+            if len(query) == 2:
+                result = purchase.get_answer_price(query[1])
+            else:
+                result = "格式错误。示例：\n查询答案价格 囚牛斋"
 
         elif content.startswith("查询龙币"):
             result = purchase.check_credits(openid)

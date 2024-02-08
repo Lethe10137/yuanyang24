@@ -1,6 +1,6 @@
-from .models import Purchase, Group, Hint
+from .models import Purchase, Group, Hint, Skip
 
-from .titles import  titles
+from .titles import  titles, purchaseable_titles, titles_to_num, credits, answers
 
 import re
 
@@ -23,12 +23,35 @@ from functools import wraps
 
 from django.db import transaction
 
-
+import math
 
 import time
 import datetime
+
+def get_time():
+    return (time.time() - datetime.datetime(2024, 2, 8, 11, 0, 0, 0).timestamp())
+
 def get_mercy():
-    return int((time.time() - datetime.datetime(2024, 2, 3, 10, 0, 0, 0).timestamp())/60)
+    return int((get_time())/60) * 3
+
+def get_normal_inflation():
+    now = get_time()
+    if(now >= 86400):
+        return 1
+
+    print(6 ** ((86400 - now) / 86400))
+    
+    return 6 ** ((86400 - now) / 86400)
+    
+def get_additional_inflation():
+    now = get_time()
+    period = 5 * 3600 + 4 * 86400
+    if(now >= period):
+        return 3 
+    
+    print((3 ** ((period - now) /period)))
+    
+    return 3  * (3 ** ((period - now) /period))
     
 
 def check_group(func):
@@ -58,7 +81,11 @@ def get_balance(group: Group):
     return group.credit - group.consumed + get_mercy()
 
 def get_price(hint: Hint):
-    return hint.price
+    return int(hint.price * get_normal_inflation())
+
+def get_credit(id: int):
+    return int(credits[id] * get_normal_inflation())
+
 
 @check_group
 def check_credits(group: Group):
@@ -84,6 +111,44 @@ def look_up_hint(group, hintid):
     else:
         return "尚未购买该提示。输入「购买提示 {}」后尝试".format(hintid)
     
+def get_answer_price(title):
+    if title not in purchaseable_titles :
+        return "题目不存在或不支持购买答案"
+    
+    question_id = titles_to_num[title]
+    price = int(get_additional_inflation() * get_credit(question_id))
+    return "{}龙币".format(price)
+
+
+@check_group
+def purchase_answer(group: Group, title):
+    if title not in purchaseable_titles :
+        return "题目不存在或不支持购买答案"
+    
+    question_id = titles_to_num[title]
+    price = int(get_additional_inflation() * get_credit(question_id))
+    
+    answer = answers[question_id][0]
+    
+    
+    if Skip.objects.filter(group_id = group, question_id = question_id).exists():
+        return "业已购买该答案\n" + answer
+    
+    
+    balance = get_balance(group)
+
+    if (balance < price):
+        return "龙币余额不足，需要{}龙币, 当前余额是{}龙币".format(price, balance)
+    
+    group.consumed += price
+    group.exitable = False
+    
+    order = Skip(group_id=group, question_id = question_id, cost=price)
+    
+    order.save()
+    group.save()
+    
+    return "购买{}的答案成功，当前余额{}\n{}".format(title, balance - price, answer)
     
 
 @check_group

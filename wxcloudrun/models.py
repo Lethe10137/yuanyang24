@@ -1,14 +1,15 @@
 from datetime import datetime
 
 from django.db import models
+from django.utils.timezone import now
 
 
 # Create your models here.
 class Counters(models.Model):
     id = models.AutoField
     count = models.IntegerField(max_length=11, default=0)
-    createdAt = models.DateTimeField(default=datetime.now(), )
-    updatedAt = models.DateTimeField(default=datetime.now(),)
+    createdAt = models.DateTimeField(default=now(), )
+    updatedAt = models.DateTimeField(default=now(),)
 
     def __str__(self):
         return self.title
@@ -26,8 +27,8 @@ class Group(models.Model):
     token = models.IntegerField(null = True)
     token_expire = models.DateTimeField(null = True)
     
-    credit = models.IntegerField(default = 0)
-    consumed = models.IntegerField(default = 0)
+    credit = models.IntegerField(default = 2100)
+    consumed = models.IntegerField(default = 600)
     exitable = models.BooleanField(default = True)
     
     # T0到T20的21个字段，类型是bigint，初始值为null
@@ -90,9 +91,17 @@ class Purchase(models.Model):
         db_table = 'Purchase'  # 数据库表名
         
     id = models.AutoField(primary_key=True)
-    createdAt = models.DateTimeField(default=datetime.now(),)
+    createdAt = models.DateTimeField(default=now(),)
     group_id = models.ForeignKey('Group', on_delete=models.CASCADE)
     hint_id = models.ForeignKey('Hint', on_delete= models.CASCADE)
     cost = models.PositiveIntegerField()
+
+class Skip(models.Model):
+    class Meta:
+        db_table = 'Skip'  # 数据库表名
         
-        
+    id = models.AutoField(primary_key=True)
+    createdAt = models.DateTimeField(default=now(),)
+    group_id = models.ForeignKey('Group', on_delete=models.CASCADE)
+    question_id = models.IntegerField(default = 0)
+    cost = models.PositiveIntegerField()
