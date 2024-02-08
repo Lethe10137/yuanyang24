@@ -21,7 +21,7 @@ message = {
     "action": "load",
     "openid": "a35d68a3ad41f0c358486fdc2a33d5bd66ecdd5294",
     "token": "83808028",
-    "a" : "h9uasd87ft8hje2f81829e98asdif8wudhjha"
+    # "a" : "h9uasd87ft8hje2f81829e98asdif8wudhjha"
 }
 
 result = requests.post(

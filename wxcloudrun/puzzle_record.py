@@ -181,6 +181,8 @@ def handle_submit(group, time, question):
 
         group.exitable = False
         
+        old_credit = group.credit
+        
         if question_id == 0:
             if group.t0 == None or group.t0 > int(time):
                 if(group.t0 == None):
@@ -391,7 +393,7 @@ def handle_submit(group, time, question):
                 return "已有更早的提交"
 
             
-        return "成功提交unix时间戳为{}的题目 {} 目前累计获得龙币{}, 余额{}".format(int(time) / 1000000, titles[question_id], group.credit,get_balance(group)  )
+        return "成功提交unix时间戳为{}的题目 {} 本次获得龙币{}, 余额{}".format(int(time) / 1000000, titles[question_id], group.credit - old_credit,get_balance(group)  )
 
     except Exception as e:
         return "提交失败， {}".format(e.__repr__())
