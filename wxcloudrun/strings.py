@@ -212,17 +212,17 @@ https://yuanyang.app
 应龙：还有，去龙之岛前，我建议你再听听蛟龙的叮嘱。
 """
 
-答案4 = """"Who dares to disturb me!" Jiaolong slowly opened his eyes, speaking angrily.
+答案4 = """Who dares to disturb me!" Jiao-loong slowly opened their eyes, speaking angrily.
 
 "I'm sorry, I just want to gather some information," you say timidly.
 
-"A few hours ago, someone asked the same question. To save my precious time, I'll keep it short. Dragon Island is a shared home for all dragons, blessed by the cosmic forces. The longer you stay on the island, the more gold coins you'll find in your pocket. Therefore, many greedy, stingy, and foolish adventurers lose themselves and end up trapped here forever. Remember my advice: although money shouldn't be spent recklessly, you must spend it when necessary!
+"A few hours ago, someone asked the same question. To save my precious time, I'll keep it short. Loong Island is a shared home for all loongs, blessed by the cosmic forces. The longer you stay on the island, the more gold coins you'll find in your pocket. Therefore, many greedy, stingy, and foolish adventurers lose themselves and end up trapped here forever. Remember my advice: although money shouldn't be spent recklessly, you must spend it when necessary!
 
-The island is divided into two parts, east and west. The eastern side is managed by Yinglong, and the west is under my control. On the island, the dragon offspring have constructed many exquisite buildings to hide the treasures of our race. However, a magical fog hides many of these structures. Fortunately, there's a connection between these buildings. Once you unlock one, you should be able to see new ones. Our sacred site, the Peak of Ten Thousand Dragons, is the highest point on the island. But only the most intelligent and brave warriors are worthy of seeing it.
+The island is divided into two parts, east and west. The eastern side is managed by Ying-loong, and the west is under my control. On the island, the loong offspring have constructed many exquisite buildings to hide the treasures of our race. However, a magical fog hides many of these structures. Fortunately, there's a connection between these buildings. Once you unlock one, you should be able to see new ones. Our sacred site, the Peak of Loongs, is the highest point on the island. But only the most intelligent and brave warriors are worthy of seeing it.
 
 If you're determined to go, I strongly suggest you bring your companions. After all, with so many puzzles, few can solve them all alone. Of course, there might be someone who can.
 
-That's all I have to say. If you really want to go, ask Yinglong beside me to open the teleportation gate. I'm going back to sleep."
+That's all I have to say. If you really want to go, ask Ying-long beside me to open the teleportation gate. I'm going back to sleep."
 
 Zzz Zzz Zzz
 
