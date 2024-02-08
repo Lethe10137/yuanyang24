@@ -39,7 +39,7 @@ def get_normal_inflation():
     if(now >= 86400):
         return 1
 
-    print(6 ** ((86400 - now) / 86400))
+    # print(6 ** ((86400 - now) / 86400))
     
     return 6 ** ((86400 - now) / 86400)
     
@@ -95,7 +95,7 @@ def get_credit(id: int):
 
 @check_group
 def check_credits(group: Group):
-    print(group)
+    # print(group)
     earn = group.credit
     consume = group.consumed
     mercy = get_mercy()

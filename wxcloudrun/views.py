@@ -29,14 +29,14 @@ def public(request: HttpRequest, _):
     try:
         request = json.loads(request.body.decode())
         
-        print(request)
+        # print(request)
 
         if request["a"] != "h9uasd87ft8hje2f81829e98asdif8wudhjha":
             return Http404()
 
         try:
             open_id = request["openid"]
-            print(open_id)
+            # print(open_id)
             assert len(open_id) == 42
             binascii.unhexlify(open_id)
         except:
@@ -207,7 +207,7 @@ def normal_handle_reply(request: HttpRequest):
 
         elif content.startswith("同步进度"):
             progress = get_load(True, "", openid)
-            print(progress)
+            # print(progress)
             if not progress["ok"]:
                 result = progress["msg"]
             else:

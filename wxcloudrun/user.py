@@ -127,7 +127,7 @@ def create_group(open_id):
 
 def create_token(open_id):
     user : GroupBelong = get_user(open_id)
-    print(user)
+    # print(user)
     if (user.group_id != None):
         current_group = user.group_id
     else:

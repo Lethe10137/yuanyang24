@@ -171,7 +171,7 @@ def get_progress(group):
 
 
 def handle_submit(group, time, question):
-    print(group, time, question)
+    # print(group, time, question)
     try:
 
         try:

@@ -300,3 +300,17 @@ AttributeError: 'str' object has no attribute 'get'
 [2024-02-08 16:06:36,483] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
 [2024-02-08 16:06:52,645] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/puzzle_record.py changed, reloading.
 [2024-02-08 16:06:52,932] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 16:08:52,706] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 16:08:52,951] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 16:08:59,065] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/puzzle_record.py changed, reloading.
+[2024-02-08 16:08:59,312] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 16:09:02,419] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/user.py changed, reloading.
+[2024-02-08 16:09:02,715] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 16:09:07,819] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 16:09:08,052] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 16:09:12,163] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 16:09:12,422] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 16:09:15,525] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 16:09:15,727] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 16:09:45,990] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/purchase.py changed, reloading.
+[2024-02-08 16:09:46,220] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
