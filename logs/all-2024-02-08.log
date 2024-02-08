@@ -274,3 +274,11 @@ AttributeError: 'str' object has no attribute 'get'
 [2024-02-08 13:40:09,258] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
 [2024-02-08 13:40:09,453] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
 [2024-02-08 13:40:17,594] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /reply/ HTTP/1.1" 200 152
+[2024-02-08 15:15:10,875] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 15:15:28,021] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /cloud/ HTTP/1.1" 200 828
+[2024-02-08 15:15:48,826] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /cloud/ HTTP/1.1" 200 78
+[2024-02-08 15:15:57,530] [basehttp.py:161] [basehttp:log_message] [INFO]- "POST /cloud/ HTTP/1.1" 200 828
+[2024-02-08 15:17:32,837] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 15:17:33,063] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2024-02-08 15:17:35,143] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /home/lethe/thu/dragon/yuanyang24/wxcloudrun/views.py changed, reloading.
+[2024-02-08 15:17:35,367] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader

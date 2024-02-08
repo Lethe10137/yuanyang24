@@ -3,18 +3,25 @@ import requests
 import json
 
 
-message = {
-  "action": "load", 
-  "openid": "a159de679ef026757e39bb42886bf6e8f46b3b3db7",
-  # "token": "af58d2b608c5fc700bab6309140e2eef9b5eb7063d4c8cd583b5044d58f6acdf4db3d16a137b87489a0f8401c5028b7ccc03f2a7e9a59a9079dd2d9407117549"
-  "token" : "45197524"
-}
+# message = {
+#   "action": "load", 
+#   "openid": "a159de679ef026757e39bb42886bf6e8f46b3b3db7",
+#   # "token": "af58d2b608c5fc700bab6309140e2eef9b5eb7063d4c8cd583b5044d58f6acdf4db3d16a137b87489a0f8401c5028b7ccc03f2a7e9a59a9079dd2d9407117549"
+#   "token" : "45197524"
+# }
+
+# message = {
+#   "action": "submit", 
+#   "openid": "a159de679ef026757e39bb42886bf6e8f46b3b3db7",
+#   "token": "af58d2b608c5fc700bab6309140e2eef9b5eb7063d4c8cd583b5044d58f6acdf4db3d16a137b87489a0f8401c5028b7ccc03f2a7e9a59a9079dd2d9407117549"
+#   # "token" : "45197524"
+# }
 
 message = {
-  "action": "submit", 
-  "openid": "a159de679ef026757e39bb42886bf6e8f46b3b3db7",
-  "token": "af58d2b608c5fc700bab6309140e2eef9b5eb7063d4c8cd583b5044d58f6acdf4db3d16a137b87489a0f8401c5028b7ccc03f2a7e9a59a9079dd2d9407117549"
-  # "token" : "45197524"
+    "action": "load",
+    "openid": "a35d68a3ad41f0c358486fdc2a33d5bd66ecdd5294",
+    "token": "83808028",
+    "a" : "h9uasd87ft8hje2f81829e98asdif8wudhjha"
 }
 
 result = requests.post(
