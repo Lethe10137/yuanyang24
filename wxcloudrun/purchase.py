@@ -23,13 +23,7 @@ from functools import wraps
 
 from django.db import transaction
 
-import math
-
-import time
-import datetime
-
-def get_time():
-    return (time.time() - datetime.datetime(2024, 2, 8, 11, 0, 0, 0).timestamp())
+from .epoch import get_time
 
 def get_mercy():
     return int((get_time())/60) * 3

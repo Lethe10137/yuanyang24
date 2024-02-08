@@ -15,6 +15,8 @@ from .utils import trunc_open_id, decode_token
 
 from . import user
 
+from .epoch import get_time
+
 logger = logging.getLogger("log")
 
 
@@ -96,7 +98,7 @@ def get_load(trusted, token, openid):
 
 def reply(request: HttpRequest, _):
     now = datetime.datetime.now().timestamp()
-    time_diff = now - datetime.datetime(2024, 2, 2, 11, 0, 0).timestamp()
+    time_diff = get_time()
 
     if time_diff < 0:
         return early_handle_reply(request, time_diff)
