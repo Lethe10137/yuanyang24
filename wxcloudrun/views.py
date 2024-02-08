@@ -112,6 +112,13 @@ def early_handle_reply(request: HttpRequest, time_diff):
         request = json.loads(request.body.decode())
         content: str = request["Content"]
 
+        # print(request)
+        openid = request["FromUserName"]
+        openid = trunc_open_id(openid)  # 保证长度是28字符， 即168位
+
+        byte_id = base64.urlsafe_b64decode(openid)
+        openid = binascii.hexlify(byte_id).decode("utf-8")
+
         necessary = necessary_reply(content)
 
         if necessary:
@@ -122,8 +129,9 @@ def early_handle_reply(request: HttpRequest, time_diff):
 
 如果您想成为【撰稿人】或寻求【商业合作】，回复相应关键词试试？！
 
-如果你正在新春闯关，""" + "闯关还有{:.5f}时辰开始".format(
-                -time_diff / 7200
+
+如果你正在新春闯关，""" + "闯关还有{:.5f}时辰开始。你的openid是{}".format(
+                -time_diff / 7200, openid
             )
 
         return JsonResponse(

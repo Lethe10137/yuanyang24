@@ -7,9 +7,9 @@ from django.utils.timezone import now
 # Create your models here.
 class Counters(models.Model):
     id = models.AutoField
-    count = models.IntegerField(max_length=11, default=0)
-    createdAt = models.DateTimeField(default=now(), )
-    updatedAt = models.DateTimeField(default=now(),)
+    count = models.IntegerField(default=0)
+    createdAt = models.DateTimeField(default=now, )
+    updatedAt = models.DateTimeField(default=now,)
 
     def __str__(self):
         return self.title
@@ -91,7 +91,7 @@ class Purchase(models.Model):
         db_table = 'Purchase'  # 数据库表名
         
     id = models.AutoField(primary_key=True)
-    createdAt = models.DateTimeField(default=now(),)
+    createdAt = models.DateTimeField(default=now,)
     group_id = models.ForeignKey('Group', on_delete=models.CASCADE)
     hint_id = models.ForeignKey('Hint', on_delete= models.CASCADE)
     cost = models.PositiveIntegerField()
@@ -101,7 +101,7 @@ class Skip(models.Model):
         db_table = 'Skip'  # 数据库表名
         
     id = models.AutoField(primary_key=True)
-    createdAt = models.DateTimeField(default=now(),)
+    createdAt = models.DateTimeField(default=now,)
     group_id = models.ForeignKey('Group', on_delete=models.CASCADE)
     question_id = models.IntegerField(default = 0)
     cost = models.PositiveIntegerField()
