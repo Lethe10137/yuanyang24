@@ -37,8 +37,8 @@ def decode_token(token, key_phrase, salt_phase):
         return None
 
 
-KEY_PHASE  = b"oikjhfe3ewdsxcvjp8765r4edf";
-SALT_PHASE = b"234578okhfdwe57iknbvcde5678";
+KEY_PHASE  = b"oikjhfe3ewdsxcvjp8765r4edfbaimochuan";
+SALT_PHASE = b"234578okhfdwe57iknbvcde5678xudong";
 
 token = "f5a6ec126d3f24264027a859a7c2e6123b1cae0baf66b0a3e422ac72954a291a30840a81dec20d54b7a69238662c680e0305c9e2621247aa5c4cff784e060dc7"
 token = "71ad1c0f5c0682a74001c5f3d6aa8723522a4d53438fc810869c4e9a53dd530301cd10128cc54cb7909afa070a1d8c4b37382d7f2a948d8fc9e4226a6073452a"
