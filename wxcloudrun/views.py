@@ -23,8 +23,7 @@ logger = logging.getLogger("log")
 from .strings import simple_reply, first_reply, necessary_reply
 
 
-KEY_PHASE = b"oikjhfe3ewdsxcvjp8765r4edf"
-SALT_PHASE = b"234578okhfdwe57iknbvcde5678"
+from .utils import KEY_PHASE, SALT_PHASE
 
 
 def public(request: HttpRequest, _):
