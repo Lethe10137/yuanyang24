@@ -10,8 +10,9 @@ import base64
 import binascii
 from . import puzzle_record, purchase
 import datetime
+import time
 
-from .utils import trunc_open_id, decode_token
+from .utils import trunc_open_id, decode_token, get_token
 
 from . import user
 
@@ -61,7 +62,10 @@ def public(request: HttpRequest, _):
 
 def submit(openid, token):
     try:
-        id, time, question = decode_token(token, KEY_PHASE, SALT_PHASE)
+        try:
+            id, time, question = decode_token(token, KEY_PHASE, SALT_PHASE)
+        except:
+            raise Exception("龙之徽记不合法")
         if id == openid:
             group_id = user.get_group_id(openid)
             if group_id:
@@ -73,8 +77,9 @@ def submit(openid, token):
                 id, time, question
             )
     except Exception as e:
-        result = "不合法的龙之徽记 {}".format(e)
+        result = "提交出错： {}".format(e)
     return result
+
 
 
 def get_load(trusted, token, openid):
@@ -265,6 +270,10 @@ def normal_handle_reply(request: HttpRequest):
 
         elif content.startswith("查询龙币"):
             result = purchase.check_credits(openid)
+            
+            
+        elif content == "5d5cf9cff4356dc2f45d169e9ac6b3ddddd1806c7b4858eadf2f4c839c14fdb9":
+            result =  "获取龙之徽记。请在本公众号中回复以下内容" + get_token(117029381625775928, openid)
 
         # elif content == "图片测试":
         #     return JsonResponse(

@@ -34,7 +34,9 @@ def exit_group(open_id):
     
 def get_group_id(open_id):
     user = get_user(open_id)
-    return user.group_id
+    if (user.group_id):
+        return user.group_id
+    raise Exception("请先加入或创建队伍")
 
 def get_group_id_lock(open_id):
     user = get_user(open_id)
