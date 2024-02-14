@@ -155,7 +155,7 @@ guess = [
         "id" : 20,
         "question" : "【题面】生命，起源；探索，矿藏；蓝色，浩瀚【题目】 猜两字‘名词’",
         "hint" : "......比天空更宽阔的是人的胸怀。——雨果",
-        "answer" : "爆米花",
+        "answer" : "海洋",
         "reply" : "",
         "article" : ""
     },
@@ -237,7 +237,9 @@ replys = {}
 
 total = len(guess)
 
+
 for i in range(total - 1):
+    # print(i,guess[i]["answer"], guess[i+1]["id"])
     replys[guess[i]["answer"]] = "回答正确。新春闯关期间略去相关知识推送。\n" + \
                                  "第{:02d}题".format(guess[i+1]["id"]) + guess[i+1]["question"] + \
                                  "回复【线索{:02d}】以获得更多提示".format(guess[i+1]["id"])
@@ -251,3 +253,7 @@ replys["猜词闯关"] = "第{:02d}题".format(guess[0]["id"]) + guess[0]["quest
                                  
 replys[guess[-1]["answer"]] = "回答正确。新春闯关期间略去相关知识推送。\n没有更多题目。" 
                                  
+                        
+                        
+
+
